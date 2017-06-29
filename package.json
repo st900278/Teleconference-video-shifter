@@ -12,7 +12,10 @@
   "author": "TY.Wang",
   "license": "MIT",
   "devDependencies": {
+    "ejs": "~2.5.6",
     "express": "~4.15.3",
-    "ejs": "~2.5.6"
+    "nodemon": "^1.11.0",
+    "simple-peer": "^8.1.1",
+    "webpack": "^3.0.0"
   }
 }

@@ -9,45 +9,22 @@
     <div id="videobox" style="height:70vh; position: absolute; left:30%; top:0px; z-index:0;">
         <video></video>
 
-        
+
     </div>
-    
+
     <div style="height:30vh; position: absolute; left:40%; top:70vh; z-index:3;">
         <button id="left">left</button>
         <button id="right">right</button>
     </div>
-    <div style="background-color:white; height:100vh; width:40%; position: absolute; right:0px; top:0px;">test</div>
+    <div style="background-color:white; height:100vh; width:40%; position: absolute; right:0px; top:0px;">
+      <form>
+        <textarea id="incoming"></textarea>
+        <button type="submit">submit</button>
+      </form>
+      <pre id="outgoing"></pre>
+    </div>
 </body>
 <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
-<script type="text/javascript">
-    var constraints = {
-        audio: true,
-        video: {
-            width: 640,
-            height: 480
-        }
-    };
-    var loc = 30;
-    navigator.mediaDevices.getUserMedia(constraints)
-        .then(function (mediaStream) {
-            var video = document.querySelector('video');
-            video.srcObject = mediaStream;
-            video.onloadedmetadata = function (e) {
-                video.play();
-            };
-        })
-        .catch(function (err) {
-            console.log(err.name + ": " + err.message);
-        }); // always check for errors at the end.
-    
-    document.getElementById("left").addEventListener("click", function(){
-        loc += 1;
-        $("#videobox").css("left", loc+"%");
-    });
-    document.getElementById("right").addEventListener("click", function(){
-        loc -= 1;
-        $("#videobox").css("left", loc+"%");
-    });
-</script>
+<script type="text/javascript" src="js/bundle.js"></script>
 
 </html>
